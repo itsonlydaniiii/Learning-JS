@@ -163,3 +163,115 @@ console.log(typeof unknown2); // Output: number
 const unknown3 = true; 
 console.log(typeof unknown3); // Output: boolean
 
+
+//Conditional Statements
+/*  if, else if, and else statements
+    comparison operators
+    logical operators
+    truthy vs falsy values
+    ternary operators
+    switch statement  */
+
+//If Statement
+if (true) {
+    console.log('This message will print!'); 
+  } // Prints: This message will print!
+
+//If...Else Statements
+if (false) {
+    console.log('The code in this block will not run.');
+  } else {
+    console.log('But the code in this block will!');
+  } // Prints: But the code in this block will!
+
+
+  //Comparison Operators
+  /*    -Less than: <
+        -Greater than: >
+        -Less than or equal to: <=
+        -Greater than or equal to: >=
+        -Is equal to: ===
+        -Is not equal to: !==  */
+10 < 12 // Evaluates to true
+'apples' === 'oranges' // false
+
+let hungerLevel = 7;
+if (hungerLevel > 7) {
+  console.log('Time to eat!');
+} 
+else {
+  console.log('We can eat later!');
+}; //Prints 'We can eat later!'
+
+//Logical Operators
+/*  -the and operator (&&)
+    -the or operator (||)
+    -the not operator, otherwise known as the bang operator (!) */
+if (stopLight === 'green' && pedestrians === 0) {
+    console.log('Go!');
+    } else {
+    console.log('Stop');
+    } 
+
+if (day === 'Saturday' || day === 'Sunday') {
+    console.log('Enjoy the weekend!');
+    } else {
+    console.log('Do some work.');
+    }
+
+let excited = true;
+console.log(!excited); // Prints false
+    
+let sleepy = false;
+console.log(!sleepy); // Prints true
+    
+let mood = 'sleepy';
+let tirednessLevel = 6;
+if (mood === 'sleepy' && tirednessLevel > 8){
+  console.log('time to sleep');
+} else {
+  console.log('not bed time yet')
+}; //Prints 'not bed time yet'
+
+//Truthy and Falsy
+let myVariable = 'I Exist!';
+
+if (myVariable) {
+   console.log(myVariable)
+} else {
+   console.log('The variable does not exist.')
+} /* The code block in the if statement will run because myVariable has a truthy value; 
+even though the value of myVariable is not explicitly the value true, when used in a boolean 
+or conditional context, it evaluates to true because it has been assigned a non-falsy value
+    -0
+    -Empty strings like "" or ''
+    -null which represent when there is no value at all
+    -undefined which represent when a declared variable lacks a value
+    -NaN, or Not a Number  */
+let numberOfApples = 0;
+if (numberOfApples){
+    console.log('Let us eat apples!');
+} else {
+    console.log('No apples left!');
+}  // Prints 'No apples left!'
+
+let wordCount = 7;
+
+if (wordCount) {
+  console.log("Great! You've started your work!");
+} else {
+  console.log('Better get to work!');
+}
+
+
+let favoritePhrase = '';
+
+if (favoritePhrase) {
+  console.log("This string doesn't seem to be empty.");
+} else {
+  console.log('This string is definitely empty.');
+} //Prints 'Great! You've started your work!
+           //This string is definitely empty.
+
+    
+   
