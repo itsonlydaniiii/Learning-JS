@@ -451,3 +451,4 @@ function average(number1, number2) {
 average(2, 7); // Returns 9
 
 
+//Parameters and Arguments
