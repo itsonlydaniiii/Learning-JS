@@ -70,6 +70,9 @@ console.log(Math.floor(Math.random() * 50)); // Prints a random whole number bet
 console.log(Math.ceil(43.8)); //returns the smallest integer greater than or equal to a decimal number.
 
 
+//VARIABLES
+//may begin with any symbol or letter but not a number
+
 //Variable: var
 /*Variable names cannot start with numbers.
 Variable names are case sensitive, so myName and myname would be different variables. It is bad practice to 
@@ -92,6 +95,17 @@ console.log(price); // Output: undefined
 price = 350;
 console.log(price); // Output: 350
 
+let bootcamp = "App Academy";
+console.log(bootcamp); // 'App Academy'
+let birthYear = 2012;
+console.log(birthYear); // 2012
+
+//Manipulating variables
+let num = 42;
+console.log(num + 8); // => 50
+console.log(num); // => 42
+num = num + 10;
+console.log(num); // => 52
 
 //Variable: const
 //cannot be reassigned because it is constant
@@ -99,6 +113,19 @@ console.log(price); // Output: 350
 const myName = 'Gilberto';
 console.log(myName); // Output: Gilberto
 
+//Assignment Shorthand
+let number = 0;
+number += 10; // equivalent to number = number + 10
+number -= 2; // equivalent to number = number - 2
+number /= 4; // equivalent to number = number / 4
+number *= 7; // equivalent to number = number * 7
+console.log(number); // 14
+
+let year = 3004;
+year++;
+console.log(year); // 3005
+year--;
+console.log(year); // 3004
 
 //Mathematical Assignment Operators
 let w = 4;
@@ -131,6 +158,67 @@ let b = 20;
 b--;
 console.log(b); // Output: 19
 
+//NUMBERS
+console.log(2 + 3); // => 5
+console.log(42 - 42); // => 0
+console.log(-4 * 1.5); // => -6
+console.log(25 / 8); // => 3.125
+console.log(5 * 3 + 2); // => 17
+console.log(2 + 3 * 5); // => 17
+console.log((2 + 3) * 5); // => 25
+
+//The remainder operator MODULO
+//remainder that results from a division
+console.log(10 % 3); // => 1
+console.log(14 % 5); // => 4
+console.log(20 % 17); // => 3
+console.log(18 % 6); // => 0
+console.log(7 % 9); // => 7
+console.log(7 % 10)// => 7
+
+// modulo has precedence over addition
+console.log(4 + 12 % 5); // => 6
+console.log((4 + 12) % 5); // => 1
+
+//NaN
+//Not a Number
+let numb;
+console.log(numb + 3); // NaN
+
+//STRINGS
+//represent textual data
+//always wrapped in '' or ""
+
+// valid strings
+'Shakespeare wrote, "To be or not to be"';
+"That's a great string";
+
+// invalid string
+//'That's a bad string'
+
+//Calculating length
+console.log("ramen".length); // => 5
+console.log("go home!".length); // => 8
+console.log("".length); // => 0
+
+//Indexing a string
+//warped in [] 
+//starts from 0
+console.log("bootcamp"[0]); // => 'b'
+console.log("bootcamp"[1]); // => 'o'
+console.log("bootcamp"[2]); // => 'o'
+console.log("bootcamp"[3]); // => 't'
+console.log("bootcamp"[7]); // => 'p'
+console.log("bootcamp"[10]); // => undefined
+console.log("bootcamp"[-3]); // => undefined
+
+//Using indexOf
+console.log("bagel".indexOf("b")); // => 0
+console.log("bagel".indexOf("a")); // => 1
+console.log("bagel".indexOf("l")); // => 4
+console.log("bagel".indexOf("z")); // => -1
+/*If we search for a character that appears more than once in a string, 
+indexOf will return the index of the first occurance of that character.   */
 
 //String Concatenation with Variables
 //The + operator can be used to combine two string values even if those values are being stored in variables
@@ -140,6 +228,8 @@ console.log('I own a pet ' + myPet + '.');  // Output: 'I own a pet armadillo.'
 let favoriteAnimal = ' Dog';
 console.log('My favorite animal:' + favoriteAnimal); //Output: 'My favorite animal: Dog'
 
+console.log("hello" + "world"); // => 'helloworld'
+console.log("goodbye" + " " + "moon"); // => 'goodbye moon'
 
 //String Interpolation
 // insert, or interpolate, variables into strings using template literals
@@ -256,21 +346,108 @@ if (numberOfApples){
 }  // Prints 'No apples left!'
 
 let wordCount = 7;
-
 if (wordCount) {
   console.log("Great! You've started your work!");
 } else {
   console.log('Better get to work!');
 }
-
-
 let favoritePhrase = '';
-
 if (favoritePhrase) {
   console.log("This string doesn't seem to be empty.");
 } else {
   console.log('This string is definitely empty.');
 } //Prints 'Great! You've started your work!
            //This string is definitely empty.
+
+//BOOLEAN DATA
+//Only 2 types: True and False
+
+//Logical Operators
+  //! (not)
+console.log(!true); // => false
+console.log(!false); // => true
+console.log(!!false); // => false
+  //&& (and)
+console.log(false && false); // => false
+console.log(false && true); // => false
+console.log(true && false); // => false
+console.log(true && true); // => true
+  //|| (or)
+console.log(false || false); // => false
+console.log(false || true); // => true
+console.log(true || false); // => true
+console.log(true || true); // => true
+
+//Logical order of operations
+//JavaScript will evaluate ! then && then ||.
+console.log(true || true && false);    // => true
+console.log(false && !(false || true)); // => false
+
+
+//De Morgan's Law
+/*!(A || B) is equivalent to !A && !B
+!(A && B) is equivalent to !A || !B */
+
+//FUNCTIONS
+//procedure of code that will run when called
+
+//Writing functions
+  /*The name of the function.
+  A list of parameters to the function, enclosed in parentheses (( )).
+  The code to be run when this function is run, enclosed in curly braces ({ }). */
+
+//Function declaration
+function average(number1, number2) {
+  return (number1 + number2) / 2;
+}
+
+//Invoking or calling a function
+//passing arguments to the function.
+// Function definition
+function average(number1, number2) {
+  return (number1 + number2) / 2;
+}
+// This function call passes the arguments 10 and 16.
+average(10, 16)  // Returns 13
+
+//Calling functions
+function callMe() {
+  console.log("Second!");
+  console.log("Third!");
+}
+
+console.log("First!");
+callMe();
+console.log("Fourth!");
+// Running this file will print these statements in this order:
+// "First!"
+// "Second!"
+// "Third!"
+// "Fourth!"
+
+//Returning a value
+//Every function in JavaScript returns undefined unless otherwise specified.
+function average(number1, number2) {
+  return (number1 + number2) / 2;
+}
+
+const result = average(10, 16);   // The function call returns 13,
+                                  // so the result variable is set to 13.
+
+// We can check what a function returns by printing its result:
+console.log(result);            // Prints 13
+
+// Alternatively, we can print the function invocation:
+console.log(average(10, 16));   // Prints 13
+
+//any code after a return will not be executed!
+function average(number1, number2) {
+  let sum = number1 + number2;
+  return sum;
+  // Anything under the `return sum` statement will NOT be executed.
+  console.log("this will not run");
+  return false;
+}
+average(2, 7); // Returns 9
 
 
