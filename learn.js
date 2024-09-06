@@ -532,3 +532,6 @@ function whisper (str) {
   return whisperedStr
 }
 console.log(whisper("HELLO!!!")) //hello!!!
+
+
+//conditionals
