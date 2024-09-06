@@ -534,4 +534,143 @@ function whisper (str) {
 console.log(whisper("HELLO!!!")) //hello!!!
 
 
-//conditionals
+//CONTROL FLOW
+//the order in which instructions are executed within a program
+//The control structures within JavaScript allow the program flow to change within a unit of code or a function
+
+//Conditional Statements
+  // this is the test expression
+  if (3 === 3) {
+    // this is the then expression
+    // this code will run if the above statement is true
+    console.log("this is a three!");
+  }
+
+  function mathFun() {
+    let x = 2 + 3;
+
+    if (x === 3) {
+      console.log("we have a 3");
+    } else if (x === 4) {
+      // this code will run if the above statement is true
+      console.log("we have a 4");
+    } else if (x === 5) {
+      // this code will run if the above statement is true
+      console.log("we have a 5");
+    }
+  };
+  mathFun(); // Prints "we have a 5"
+
+
+  function mathFun() {
+    let x = 19;
+    if (x === 3) {
+      console.log("we have a 3");
+    } else if (x === 4) {
+      console.log("we have a 4");
+    } else {
+      console.log("I will return if everything above me is falsey!");
+    }
+  };
+  mathFun(); // => "I will return if everything above me is falsey!"
+
+
+//Mutually exclusive conditions
+//DRY - don't repeat yourself!
+
+function isFive(num) {
+  if (num === 5){
+      return True;
+  } else {
+      return false;
+  }
+}
+console.log(isFive(9)); //prints false
+
+
+//two ways to exectute 
+function isOdd(num) {
+  return (num / 2 !== 0); 
+} 
+console.log(isOdd(3)); //prints 'true'
+
+function isOddConditional(num){
+  if (num / 2 !== 0){
+      return false;
+  } else {
+      return fase;
+  }
+}
+console.log(isOddConditional(8)); //prints 'false'
+
+
+//Looping
+//loops will repeatedly execute a section of code while a condition is true
+
+//while loops
+let indexx = 0;//index is the traditional word for the variable that keeps track of how many times the loop has been run
+// this is the condition that will be checked every time this loop is run
+while (indexx < 10) {
+  console.log("The number is " + indexx);
+  // this is common shorthand for index = index + 1
+  indexx++; // if we do not increase the index then our condition is always true
+           // meaning this will run forever!
+}
+
+/*An iteration is the act of repeating a procedure, 
+hence looping is an iterative technique*/
+let array = [0, 1, 2]; //will do one loop for each digit in the Array
+let indexc = 0;
+
+while (indecx < array.length) {
+  console.log(
+    "Both the index and the current array position are " + array[indexc]
+  );
+  indexc++;
+}
+
+//for loops
+  //usually used with an integer counter
+//for (<initial expression>;<condition>;<loopEnd expression>)
+  //The initial expression which will be run once at the beginning of the loop.
+  /*The condition which is checked every time the loop is run. 
+  If this condition is true the loop will run again. If this 
+  condition is false the loop will end.*/
+  //The loopEnd expression which will be run at the end of the loop before checking the condition again.
+for (let index = 0; index < 10; index += 1) {
+  // the code inside this block will run 10 times
+}
+
+//iterate through a string
+let testString = "testing";
+// We can use the testString's length as our condition!
+// Since we know the testString's index starts at 0
+// and our index starts at 0 we can access each letter:
+for (let index = 0; index < testString.length; index += 1) {
+  let letter = testString[index];
+  console.log(letter);
+}
+
+
+//Translating From One Loop to Another
+// these two do the exact same thing!
+function forLoopDoubler (array) {
+  // it is convention to shorten index to just i in most cases
+  for (let i = 0; i < array.length; i++) {
+    array[i] = array[i] * 2;
+  }
+  return array;
+};
+
+function whileLoopDoubler (array) {
+  let i = 0;
+  while (i < array.length) {
+    array[i] = array[i] * 2;
+    i++;
+  }
+  return array;
+};
+
+forLoopDoubler([1, 2, 3]); // => [2,4,6]
+whileLoopDoubler([1, 2, 3]); //=> [2,4,6]
+
