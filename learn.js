@@ -452,3 +452,83 @@ average(2, 7); // Returns 9
 
 
 //Parameters and Arguments
+//comma separated variables specified as part of a function's declaration
+/*by defining parameters when we declare our function we are effectively 
+setting accessible variables within the function:   */
+function add(firstParameter, secondParameter) {
+  console.log(firstParameter + secondParameter);
+}
+// the add function declares two parameters
+//function add(1, 2); //=> 3
+
+/*a function will not throw an error if the number of arguments passed during a 
+function invocation is different than the number of parameters listed during 
+function declaration  */
+function add(firstParameter, secondParameter) {
+  console.log(firstParameter + secondParameter);
+}
+add(1, 2, 17, 14); //=> 3
+// this will ignore the 17 & 14
+// the first two arguments passed in will be assigned to the first two parameters
+
+
+//pass in less arguments then needed
+function add(firstParameter, secondParameter) {
+  console.log(firstParameter + secondParameter);
+}
+add(5); //=> NaN
+
+//Naming the function
+function testMe() {
+  console.log("Test me pplease!")
+}
+//Calling/Invoking the function
+testMe(); //prints "Tats me please"
+
+//Functions return as 'undefined' by default
+function addTwo (num1, num2) {
+  num1 + num2;
+} //undefined
+
+function addTwo (num1, num2){
+  return num1 + num2; //return tells it what to do with the code
+}             //Code stops executing after the first return value
+console.log(addTwo(1,3)) // prints 3
+
+//self test
+function goodbye(name) {
+  return "Bye " + name + "." ;//own written test code
+}
+console.log(goodbye("Daniel")); // => "Bye Daniel."
+console.log(goodbye("Mark")); // => "Bye Mark."
+console.log(goodbye("Beyonce")); // => "Bye Beyonce."
+
+function sayHello(name) {
+  let msg = "Hello, " + name + ". How are you?";
+  return msg;
+}
+console.log(sayHello("world")); //Hello, world. How are you?
+
+function ageIs (age) {
+    return "I am " + age + "-years old.";
+}
+console.log(ageIs("24")); //I am 24-years old.
+
+function dogName (dog) {
+    return "My dog's name is " + dog + ".";
+}
+console.log(dogName("Comet")) //My dog's name is Comet.
+
+function averageOfTwo (num1, num2) {
+  let sum = num1 + num2;
+  let average = sum / 2;
+  return average;
+}
+console.log(averageOfTwo(2, 2)) //2
+
+//adding more functions 
+function whisper (str) {
+  let whisperedStr = str.toLowerCase();
+  return whisperedStr
+}
+console.log(whisper("HELLO!!!")) //hello!!!
