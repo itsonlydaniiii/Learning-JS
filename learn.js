@@ -692,7 +692,126 @@ function logBetweenWhile(lowNum, highNum) {
   }
 }
 
+/*Define a function fizzBuzz(max) that takes a number and prints every number from 0 to 
+max (not inclusive) that is divisible by either 3 or 5, but not both. */
+function fizzBuzz(max) {
+  for (let i = 0; i < max; i += 1) {
+    if (i % 3 === 0 && i % 5 !== 0) {
+      console.log(i);
+    } else if (i % 5 === 0 && i % 3 !== 0) {
+      console.log(i);
+    }
+  }
+}
+
+function fizzBuzzWhile(max) {
+  let i = 0;
+  while (i < max) {
+    if (i % 3 === 0 && i % 5 !== 0) {
+      console.log(i);
+    } else if (i % 5 === 0 && i % 3 !== 0) {
+      console.log(i);
+    }
+    i++;
+  }
+}
+
+function fizzBuzzNested(max) {
+  for (let i = 0; i < max; i += 1) {
+    if (i % 3 === 0) {
+      if (i % 5 !== 0) {
+        console.log(i);
+      }
+    } else if (i % 5 === 0) {
+      console.log(i);
+    }
+  }
+}
+
+
 
 //ARRAYS
 //store multiple values all within a single structure - like a list almost
 //can hold strings, integers and even other arrays
+
+//Using arrays
+//we can use an array to contain all of the letters, and assign it to a single alphabet variable:
+let alphabet = [
+  "a", "b", "c", "d", "e", "f",
+  "g", "h", "i", "j", "k", "l",
+  "m", "n", "o", "p", "q", "r",
+  "s", "t", "u", "v", "w", "x",
+  "y", "z"
+];
+
+//Calculating the length of an array
+console.log([4, 7, 9].length); // => 3
+console.log([1, 2].length); // => 2
+console.log([].length); // => 0
+
+//Properly indexing an array
+let numbersAndLetters = ["b", "z", 17, "cat"];
+
+console.log(numbersAndLetters[0]); // => "b"
+console.log(numbersAndLetters[1]); // => "z"
+console.log(numbersAndLetters[2]); // => 17
+console.log(numbersAndLetters[3]); // => "cat"
+
+// Arrays always start at the index of 0
+//indices should always be a number
+
+//Containing data in arrays
+let wackyArray = [2, 17, "apple", "cat", ["apple"]];
+console.log(wackyArray[0]); // => 2
+console.log(wackyArray[1]); // => 17
+console.log(wackyArray[3]); // => "cat"
+console.log(wackyArray[4]); // => ["apple"]
+
+//indexOf
+console.log([1, 3, 5, "apple", "jet"].indexOf(3)); // => 1
+console.log([1, 3, 5, "apple", "jet"].indexOf(5)); // => 2
+console.log([1, 3, 5, "apple", "jet"].indexOf("jet")); // => 4
+// this won't be found in the array
+console.log([1, 3, 5, "apple", "jet"].indexOf("potato")); // => -1
+
+//Concatenation with arrays
+//just a fancy word for joining things together into a single collection
+console.log([1, 2, 3].concat([4, 5, 6])); // => [1, 2, 3, 4, 5, 6]
+
+//Manipulating arrays
+let arr = [1, 2, 3];
+arr.push(4);
+arr.push(5);//adding
+console.log(arr);   // => [1, 2, 3, 4, 5]
+arr.pop();//removing
+console.log(arr);   // => [1, 2, 3, 4]
+
+/*Write a function combineArray(array1, array2) that takes in two arrays of numbers and returns 
+the two arrays combined into a single array. */
+function combineArray(array1, array2){
+  let newArray = array1.concat(array2);
+  return newArray;
+}
+console.log(combineArray([1, 2], [3, 4])); //prints [ 1, 2, 3, 4 ]
+
+/*Write a function doubler(numbers) that takes an array of numbers and returns a new 
+array where every element of the original array is multiplied by 2 */
+function doubler(numbers) {
+  let doubledNums = [];
+
+  let i = 0;
+  while (i < numbers.length) {
+    let oldNum = numbers[i];
+    let newNum = oldNum * 2;
+    // this step is important because concat does NOT change the original array
+    doubledNums = doubledNums.concat(newNum);
+
+    i += 1;
+  }
+
+  return doubledNums;
+}
+
+console.log(doubler([1, 2, 3, 4])); // => [2, 4, 6, 8]
+console.log(doubler([7, 1, 8])); // => [14, 2, 16]
+
