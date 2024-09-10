@@ -1,3 +1,6 @@
+//Test to ensure VS code was configured correctly
+
+
 //Single line note
 
 /*Multi  line notes
